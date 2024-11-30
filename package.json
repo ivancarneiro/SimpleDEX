@@ -1,0 +1,16 @@
+{
+  "name": "simpledex",
+  "version": "1.0.0",
+  "description": "SimpleDEX is a straightforward decentralized exchange (DEX) smart contract implemented in Solidity, designed to enable token swapping between two ERC20 tokens using the constant product formula. This contract provides basic liquidity management and token exchange functionality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.16"
+  }
+}
