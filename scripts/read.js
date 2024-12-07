@@ -1,20 +1,19 @@
-const { ethers } = require("hardhat");
-
 async function main() {
-    const greeterAddress = "0xBCe24Bf9D36b54e2889A80B84ADeDcE719DF6125";
-    const [deployer] = await ethers.getSigners();
-    
-    console.log("Conectando desde:", deployer.address);
-    console.log("Dirección del contrato:", greeterAddress);
+    const greeterAddress = "0x0a0d32d096E3414B76AB1791ddEc1e24b1508a6f";
+    const provider = ethers.provider;
+
+    // Verificar si el contrato existe
+    const bytecode = await provider.getCode(greeterAddress);
+    // console.log("Bytecode del contrato:", bytecode);
 
     const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.attach(greeterAddress);
+    const greeter = Greeter.attach(greeterAddress);
 
     try {
         const greeting = await greeter.greet();
         console.log("Greeting:", greeting);
     } catch (error) {
-        console.error("Error al leer el contrato:", error);
+        console.error("Error al leer el contrato:", error.message);
     }
 }
 
